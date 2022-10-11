@@ -870,7 +870,7 @@ class UnifiedJobSerializer(BaseSerializer):
         if 'elapsed' in ret:
             if obj and obj.pk and obj.started and not obj.finished:
                 td = now() - obj.started
-                ret['elapsed'] = (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / (10**6 * 1.0)
+                ret['elapsed'] = (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10 ** 6) / (10 ** 6 * 1.0)
             ret['elapsed'] = float(ret['elapsed'])
         # Because this string is saved in the db in the source language,
         # it must be marked for translation after it is pulled from the db, not when set
@@ -4952,7 +4952,7 @@ class InstanceSerializer(BaseSerializer):
             res['install_bundle'] = self.reverse('api:instance_install_bundle', kwargs={'pk': obj.pk})
         res['peers'] = self.reverse('api:instance_peers_list', kwargs={"pk": obj.pk})
         if self.context['request'].user.is_superuser or self.context['request'].user.is_system_auditor:
-            if obj.node_type != 'hop':
+            if obj.node_type == 'execution':
                 res['health_check'] = self.reverse('api:instance_health_check', kwargs={'pk': obj.pk})
         return res
 
