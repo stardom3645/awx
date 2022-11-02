@@ -110,7 +110,7 @@ function PageHeaderToolbar({
               <DropdownItem
                 key="help"
                 target="_blank"
-                href={`${getDocsBaseUrl(config)}/html/userguide/index.html`}
+                href="https://docs.ablecloud.io"
                 ouiaId="help-dropdown-item"
               >
                 {t`Help`}
