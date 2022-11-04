@@ -12,7 +12,7 @@ function About({ version, isOpen, onClose }) {
     if (typeof brandName === 'string' && brandName.length > 0) {
       text =
         brandName.indexOf('AWX') === -1
-          ? `${brandName} Controller ${version}`
+          ? `${brandName} Automation Controller`
           : `${brandName} ${version}`;
     }
 
@@ -32,8 +32,8 @@ function About({ version, isOpen, onClose }) {
   };
 
   const speechBubble = createSpeechBubble();
-  const copyright = t`Copyright`;
-  const redHatInc = t`Red Hat, Inc.`;
+  const copyright = t`Copyright (c), ABLECLOUD.Co.Ltd`;
+  const redHatInc = t`ABLESTACK`;
 
   return (
     <AboutModal
@@ -46,14 +46,6 @@ function About({ version, isOpen, onClose }) {
     >
       <pre>
         {speechBubble}
-        {`
-          \\
-          \\   ^__^
-              (oo)\\_______
-              (__)      A )\\
-                  ||----w |
-                  ||     ||
-                    `}
       </pre>
     </AboutModal>
   );

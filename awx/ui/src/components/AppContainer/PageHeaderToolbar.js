@@ -22,8 +22,8 @@ import {
 } from '@patternfly/react-icons';
 import { WorkflowApprovalsAPI } from 'api';
 import useRequest from 'hooks/useRequest';
-import getDocsBaseUrl from 'util/getDocsBaseUrl';
-import { useConfig } from 'contexts/Config';
+// import getDocsBaseUrl from 'util/getDocsBaseUrl';
+// import { useConfig } from 'contexts/Config';
 import useWsPendingApprovalCount from './useWsPendingApprovalCount';
 
 const PendingWorkflowApprovals = styled.div`
@@ -45,7 +45,7 @@ function PageHeaderToolbar({
 }) {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isUserOpen, setIsUserOpen] = useState(false);
-  const config = useConfig();
+  // const config = useConfig();
 
   const { request: fetchPendingApprovalCount, result: pendingApprovals } =
     useRequest(
@@ -115,7 +115,7 @@ function PageHeaderToolbar({
               <DropdownItem
                 key="help"
                 target="_blank"
-                href={`${getDocsBaseUrl(config)}/html/userguide/index.html`}
+                href="https://docs.ablecloud.io"
                 ouiaId="help-dropdown-item"
               >
                 {t`Help`}
